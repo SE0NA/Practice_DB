@@ -37,6 +37,12 @@ cmd 이용
 
 ![image](https://user-images.githubusercontent.com/85846475/122110343-65302f80-ce59-11eb-810e-d67c245fcffd.png)
  
+ 
+##### 📒 DATABASE 선택
+ [ > USE databasename; ]
+ 
+ : 선택한 데이터베이스를 사용할 것임을 선언
+ 
 
 ***
 
