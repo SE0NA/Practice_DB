@@ -16,7 +16,7 @@ cmd 이용
 ※ 세미콜론(;) 필수
 
 ##### 📒 DATABASE 생성
- [ > CREATE DATABASE databasename; ]
+ > CREATE DATABASE databasename; 
  
  : 데이터베이스 생성 명령어 다음, 생성할 데이터베이스의 이름 작성.
    → 해당 이름을 가진 데이터베이스가 이미 존재하면 에러 발생
@@ -24,22 +24,22 @@ cmd 이용
 
 
 ##### 📒 DATABASE 삭제
- [ > DROP DATABASE databasename; ]
+ > DROP DATABASE databasename; 
  
  : 데이터베이스 삭제 명령어 다음, 삭제하고자 하는 데이터 베이스의 이름 작성.
 
 
 
 ##### 📒 DATABASE 리스트 보기
- [ > SHOW DATABASES; ]
- 
- [ > SHOW SCHEMAS; ]
+ > SHOW DATABASES; 
+
+ > SHOW SCHEMAS; 
 
 ![image](https://user-images.githubusercontent.com/85846475/122110343-65302f80-ce59-11eb-810e-d67c245fcffd.png)
  
  
 ##### 📒 DATABASE 선택
- [ > USE databasename; ]
+ > USE databasename;
  
  : 선택한 데이터베이스를 사용할 것임을 선언
  
