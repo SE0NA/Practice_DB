@@ -1,0 +1,38 @@
+
+[mySQL 접속]
+
+C:\Uers\USER> mysql -uroot -p
+Enter password: ****
+
+[데이터베이스 생성]
+
+mysql> CREATE DATABASE day1;
+
+[데이터베이스 삭제]
+mysql> DROP DATABASE day1;
+
+
+[데이터베이스 목록 보기]
+mysql> SHOW DATABASES;
+
+
+[사용할 데이터 베이스 선택]
+mysql> USE day1;
+
+
+[테이블 생성]
+mysql> CREATE TABLE topic(
+    -> id INT(11) NOT NULL AUTO_INCREMENT,
+    -> title VARCHAR(100) NOT NULL,
+    -> description TEXT NULL,
+    -> created DATETIME NOT NULL,
+    -> author VARCHAR(30) NULL,
+    -> profile VARCHAR(100) NULL,
+    -> PRIMARY KEY(id)
+    -> );
+
+
+[mySQL 종료]
+mysql> exit
+
+
