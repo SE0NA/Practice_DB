@@ -5,7 +5,6 @@ C:\Uers\USER> mysql -uroot -p
 Enter password: ****
 
 [데이터베이스 생성]
-
 mysql> CREATE DATABASE day1;
 
 [데이터베이스 삭제]
