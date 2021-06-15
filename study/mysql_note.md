@@ -51,3 +51,17 @@ cmd 이용
       ~
     );
 
+
+***
+
+##### 📗 Datatypes
+
+- INT(n): Standard integer value.(-2147483648 ~ 214748367)
+   + BIGINT(m): Big integer value.
+
+- CHAR(n): 문자열 (~255)
+- VARCHAR(n): 가변 길이 문자열 (~255)
+   + TEXT(n) / MEDIUMTEXT(n) / LONGTEXT(n) 
+
+- DATETIME: 시간
+
