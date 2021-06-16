@@ -1,0 +1,33 @@
+[ 테이블 설명 보기 ]
+DESC table;
+(DESC: describe)
+
+
+[ 테이블 행 삽입 ]
+INSERT INTO table (a1, a2, date) VALUES('lee', 'hello!', NOW());
+※ AUTO_increment는 자동(번호 자동)
+
+[ 테이블 데이터 ]
+SELECT * FROM table;
+※ 가장 많이 사용되는 명령어
+
+[ 선택한 열만 보기 ]
+SELECT id, name, created FROM table;
+id, name, created 열만 속성
+
+
+[ 특정값을 가진 행 찾기 ]
+SELECT id, name, created FROM table WHERE name='lee'; 
+ # WHERE name='lee' : table의 name 열 중 'lee'값을 가진 행의 id, name, craeted를 출력
+
+
+[ 값이 큰 순으로 정렬 ]
+SELECT id, name, phone FROM table ORDER BY id DESC;
+ # ORDER BY id DESC : id값에 대해서 큰 순으로 정렬
+
+
+[ n개의 데이터만 보기 ]
+SELECT id, name, phone FROM table ORDER BY id DESC LIMIT 2;
+ # LIMIT 2 : 2개의 데이터만 보기
+
+
