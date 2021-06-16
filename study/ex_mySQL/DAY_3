@@ -1,0 +1,15 @@
+📕 UPDATE 📕
+[ 수정 ]
+UPDATE table SET name='kim', address='A-1' WHERE id=2;
+# UPDATE table : table의 내용을 수정
+# SET name='kim', address='A-1' : name, address의 데이터를 다음과 같이 수정
+# WHERE id=2 : 수정하고자하는 행은 id=2인 행
+※ WHERE 문을 빠뜨리면 전체 데이터가 바뀌므로 주의!
+
+
+📕 DELETE 📕
+[ 삭제 ]
+DELETE FROM table WHERE id=3;
+# DELETE FROM table : table의 데이터를 삭제
+# WHERE id=3 : id=3인 행을 삭제
+※ WHERE 문을 빠뜨리면 전체 데이터가 삭제되므로 주의!
