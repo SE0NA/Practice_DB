@@ -13,3 +13,75 @@ DELETE FROM table WHERE id=3;
 # DELETE FROM table : table의 데이터를 삭제
 # WHERE id=3 : id=3인 행을 삭제
 ※ WHERE 문을 빠뜨리면 전체 데이터가 삭제되므로 주의!
+
+
+
+📒 ALL 📒
+
+[ 데이터베이스 생성 ]
+CREATE DATABASE [데이터베이스명];
+(ex. CREATE DATABASE school;)
+
+
+[ 테이블 생성 ]
+CREATE TABLE [테이블명]            (ex. CREATE TABLE person)
+-> id INT(3) NOT NULL AUTO_INCREMNET,
+-> name VARCHAR(20) NOT NULL,
+-> personal_ID CHAR(20) NOT NULL,
+-> birth DATETIME() NOT NULL,
+-> phone CHAR(20),
+-> PRIMARY KEY(id)
+);
+
+
+[ 테이블 속성 정보 ]
+DESC [테이블명];
+
+
+[ 테이블 모든 행 ]
+SELECT * FROM [테이블명];
+   : 모든 열에 대한 데이터
+SELECT id, name, phone FROM [테이블명];
+
+
+[ 행 추가 ]
+INSERT INTO [테이블명] VALUES([값1], [값2], ...);
+INSERT INTO [테이블명](열1, 열3) VALUES([값1], [값3]);
+
+
+[ 행 삭제 ]
+DELETE FROM [테이블명] WHERE [열]=[속성값];
+(ex. DELETE person table WHERE id=7;)
+
+
+[ 열 추가 ]
+ALTER TABLE [테이블명] ADD [컬럼명] [타입] [옵션];
+(ex. ALTER TABLE person ADD grade INT(1) NOT NULL DEFAULT '1';
+
+  + [ 외래키 추가 ]
+    ALTER TABLE [테이블명] ADD FOREIGN KEY([열 이름]) REFERENCES [참조테이블]([참조열]);
+    (ex. ALTER TABLE table2 ADD FOREIGN KEY(manager_id) REFERENCES EMPLOYEE(id);
+    
+
+[ 열 삭제 ]
+ALTER TABLE [테이블명] DROP [컬럼명];
+
+
+[ 열 이름/타입 변경 ]
+ALTER TABLE [테이블명] CHANGE [열 이름] [변경할 열 이름] [데이터타입];
+(ex. ALTER TABLE person CHANGE number no INT(1);)
+
+
+[ 열 타입 변경 ]
+ALTER TABLE [테이블명] MODIFY [열 이름] [데이터타입];
+(ex. ALTER TABLE person MODIFY name VARCHAR(20);)
+
+
+[ 테이블 이름 수정 ]
+ALTER TABLE [테이블명] RENAME [변경할 테이블 명];
+
+
+[테이블 삭제]
+DROP TABLE [테이블명];
+
+
