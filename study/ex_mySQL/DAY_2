@@ -1,3 +1,5 @@
+📕 INSERT 📕
+
 [ 테이블 설명 보기 ]
 DESC table;
 (DESC: describe)
@@ -6,6 +8,9 @@ DESC table;
 [ 테이블 행 삽입 ]
 INSERT INTO table (a1, a2, date) VALUES('lee', 'hello!', NOW());
 ※ AUTO_increment는 자동(번호 자동)
+
+
+📕 SELECT 📕
 
 [ 테이블 데이터 ]
 SELECT * FROM table;
