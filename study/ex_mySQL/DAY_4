@@ -1,0 +1,28 @@
+
+
+[ 테이블 이름 변경 ]
+RENAME TABLE [테이블명] TO [변경할 테이블명];
+(ex. RENAME TABLE before TO after;
+
+
+[ 관계형 데이터 모델 합치기 ]
+SELECT * FROM [대상테이블명] LEFT JOIN [참조테이블명] ON [대상테이블명].[대상속성명] = [참조테이블명].[참조속성명];
+(ex. SELECT * FROM school LEFT JOIN student ON school.student_id = student.id;
+※ 테이블을 같이 표시할 때 속성명이 같은 경우, mySQL은 이를 모호하다고 판단.
+   따라서 [테이블명].[속성명]으로 표시해 주어야 함.
+   속성명을 다르게 표시하고 싶으면, [속성명] AS [표시할 속성명] 으로 작성
+   ⭐ (ex. SELECT book.id AS book_id, name, create FROM product LEFT JOIN author ON book.author_id = author.id;) ⭐
+      : book 테이블에서 선택한 열만 출력, book 테이블의 author_id 속성에 대해서 author 테이블의 id 속성과 JOIN하여 표시
+      : book.id, author.name, book.create
+    + [ 수정 ]
+      UPDATE [테이블명] SET [속성명]='[바꿀 데이터]' WHERE [속성명]=[데이터];
+      (ex. UPDATE author SET name='kim' WHERE id=4;
+      : author 테이블의 id=4인 행의 name의 값을 kim으로 변경
+      
+
+
+📘 DATABASE SERVER 📘
+> mysql -uroot -p -h[도메인주소]
+ (ex. mysql -uroot -p -hgoogle.com)
+
+도메인X → 컴퓨터에 저장된 데이터베이스 접속
