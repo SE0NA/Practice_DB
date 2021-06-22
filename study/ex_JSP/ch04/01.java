@@ -19,7 +19,7 @@ public class CalcServlet extends HttpServlet {
 		int result;
 		String op;
 		
-		response.setContentType("text/htmp"; charset=UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
 		num1 = Integer.parseInt(request.getParameter("num1"));
