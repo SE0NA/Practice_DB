@@ -22,7 +22,10 @@
 	}
 	catch(Exception e){
 		System.out.println(e);
-		out.println("<script> alert('로그인 실패')</script>");
 	}
 	
 %>
+<script>
+	alert("로그인 실패");
+	location.href="login_form.jsp";
+</script>
