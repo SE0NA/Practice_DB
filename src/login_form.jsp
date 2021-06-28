@@ -13,10 +13,10 @@
 <table border=0 width="250" cellspacing="0" cellpadding="5">
 	<tr>
 	<td align=right>ID</td>
-	<td><input type=text name=userid></td>
+	<td><input type=text name=userid size=20></td>
 	<tr>
 	<td align=right>PW</td>
-	<td><input type=password name=userpw></td>
+	<td><input type=password name=userpw size=20></td>
 </table>
 	<input type=submit value="로그인">
 </form>
