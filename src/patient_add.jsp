@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	import="java.sql.*" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head><title>신규 환자</title></head>
@@ -13,7 +12,7 @@ table{
 	border: 1px solid black;
 }
 </style>
-<form name="new_patient" method="post" action="patient_add_insert.jsp">
+<form method="post" action="patient_add2.jsp">
 <table bgcolor="#FFFFFF" cellpadding="5">
 	<tr>
 		<td align=center>이름</td>
@@ -21,7 +20,7 @@ table{
 	</tr>
 	<tr>
 		<td align=center>주민등록번호</td>
-		<td><input type=text name="id_1">-<input type=password name="id_2" placeholder="*******"></td>
+		<td><input type=text name="id_1" maxlength="6">-<input type=password name="id_2" placeholder="*******" maxlength="6"></td>
 	</tr>
 	<tr>
 		<td align=center>성별</td>
@@ -30,7 +29,7 @@ table{
 	</tr>
 	<tr>
 		<td align=center>우편번호</td>
-		<td><input type=text name="zipcode"></td>
+		<td><input type=text name="zipcode" maxlength="5"></td>
 	</tr>
 	<tr>
 		<td align=center>주소</td>
