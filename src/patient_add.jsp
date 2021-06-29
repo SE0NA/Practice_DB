@@ -13,7 +13,7 @@ table{
 	border: 1px solid black;
 }
 </style>
-<form name="new_patient" method="post" action="insert_patient.jsp">
+<form name="new_patient" method="post" action="patient_add_insert.jsp">
 <table bgcolor="#FFFFFF" cellpadding="5">
 	<tr>
 		<td align=center>이름</td>
@@ -21,7 +21,7 @@ table{
 	</tr>
 	<tr>
 		<td align=center>주민등록번호</td>
-		<td><input type=text name="id_1">-<input type=text name="id_2"></td>
+		<td><input type=text name="id_1">-<input type=password name="id_2" placeholder="*******"></td>
 	</tr>
 	<tr>
 		<td align=center>성별</td>
@@ -42,10 +42,9 @@ table{
 	</tr>
 	<tr>
 	<td colspan="3" align=center><input type="submit" value="등록">
-								 <input type="button" value="취소" onclick="history.back(-1);"></td>
+				     <input type="button" value="취소" onclick="history.back(-1);"></td>
 	</tr>
 </table>
-
 </form>
 </font>
 <H6>Practice_DB hospital 2021</H6>
