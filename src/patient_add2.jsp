@@ -61,6 +61,38 @@
 		<%
 	}
 	else{
+		Class.forName("com.mysql.jdbc.Driver");
+		String url="jdbc:mysql://localhost/hospital";
+		String mysql_id = "patient_manage";
+		String mysql_pw = "1234";
 		
+		String id=id1+"-"+id2;
+		
+		try{
+			String query = "INSERT INTO patient (name, id, sex, zipcode, address2, insurancecode) VALUES (?, ?, ?, ?, ?, ?)";
+			Connection conn=DriverManager.getConnection(url, mysql_id, mysql_pw);
+			
+			PreparedStatement pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, name);
+			pstmt.setString(2, id);
+			pstmt.setString(3, sex);
+			pstmt.setString(4, zipcode);
+			pstmt.setString(5, address2);
+			pstmt.setString(6, insurancecode);
+			
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+		} catch(Exception e){
+			System.out.println("err: "+e);
+		}
+%>
+		<!-- 신규 환자 등록 완료 안내 -->
+		<script>
+		alert('등록 완료!');
+		location.href="patient_page.jsp";
+		</script>
+<%
 	}
 %>
