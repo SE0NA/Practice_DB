@@ -12,13 +12,7 @@ manage_form.jsp | 병원 관리 시스템의 첫화면. 환자/병원을 선택�
 #### 💡 환자 관리 💡
 소스 | 내용
 ---- | ----
-patient_page.jsp | 환자 정보를 검색, 추가. </BR> 이름입력+검색 클릭 → patient_search.jsp </BR> 신규 클릭 → patient_add.jsp
+patient_page.jsp | 환자 정보를 검색, 추가. </BR> 이름입력+검색</BR> 신규 클릭 → patient_add.jsp
 patient_search.jsp | 해당 이름의 환자 리스트를 출력(hidden)
 patient_add.jsp | 신규 환자 등록 페이지 </BR> SQL에 insert 신규 환자 데이터
 patient_add2.jsp | patient_add.jsp에서 입력한 데이터 확인 </BR> null값, 자리수 체크(hisory back();)
-
-![image](https://user-images.githubusercontent.com/85846475/123763706-078eef00-d8ff-11eb-8138-ae20280574e6.png)
-![image](https://user-images.githubusercontent.com/85846475/123763910-3d33d800-d8ff-11eb-917c-dcfb5b0410da.png)
-![image](https://user-images.githubusercontent.com/85846475/123896877-5e4b0600-d99d-11eb-8b91-6f727f045085.png)
-
-
