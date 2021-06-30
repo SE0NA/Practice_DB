@@ -15,12 +15,13 @@
 			<input type="submit" value="검색">
 		</form></td>
 	<td><button onclick="location='patient_add.jsp'">신규</button></td>
-	<td><button type="reset">초기화</button></td>
+	<td><button onclick="location.href=location.href">초기화</button></td>
+	</tr>
 </table>
 <BR>
 <table bgcolor="#FFFFFF">
 	<tr align=center bgcolor="#FAED7D">
-		<td width="100">이름</td><td width="200">주민등록번호</td><td widht="70"></td>
+		<td width="100">이름</td><td width="200">주민등록번호</td><td width="130"></td>
 	</tr>
 <%
 	Class.forName("com.mysql.jdbc.Driver");
@@ -55,7 +56,7 @@
 	<tr>
 		<td><%= p_name %></td>
 		<td><%= p_id %></td>
-		<td><input type="button" value="확인" onclick="location=windows.open('this_patient.jsp','환자 정보')" id=<%=p_id%>></td>	
+		<td align=center><input type="button" value="확인" onclick="location=windows.open('this_patient.jsp','환자 정보')" id=<%=p_id%>></td>	
 	</tr>
 <%
 		}	// end of while
