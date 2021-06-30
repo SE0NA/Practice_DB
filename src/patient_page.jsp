@@ -56,7 +56,12 @@
 	<tr>
 		<td><%= p_name %></td>
 		<td><%= p_id %></td>
-		<td align=center><input type="button" value="확인" onclick="location=windows.open('this_patient.jsp','환자 정보')" id=<%=p_id%>></td>	
+		<td align=center>
+			<form method=post action="this_patient.jsp" >
+				<input type=hidden name="id" value="<%=p_id%>">
+				<input type=submit value="확인">
+			</form>
+		</td>
 	</tr>
 <%
 		}	// end of while
