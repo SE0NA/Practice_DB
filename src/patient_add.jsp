@@ -41,7 +41,7 @@ table{
 	</tr>
 	<tr>
 	<td colspan="3" align=center><input type="submit" value="등록">
-				     <input type="button" value="취소" onclick="history.back(-1);"></td>
+				     <input type="button" value="취소" onclick="locationi.href='patient_page.jsp'"></td>
 	</tr>
 </table>
 </form>
