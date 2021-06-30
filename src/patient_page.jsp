@@ -10,15 +10,18 @@
 <table>
 	<tr>
 	<td>
-		<form name="search_p" method="post" action="patient_search.jsp">
-			<input type="text" name="patient_name" placeholder="이름" >
+		<form name="search_p" method="post">
+			<input type="text" name="search_name" placeholder="이름" >
 			<input type="submit" value="검색">
 		</form></td>
-	<td><button onclick="location='add_patient.jsp'">신규</button></td>
+	<td><button onclick="location='patient_add.jsp'">신규</button></td>
+	<td><button type="reset">초기화</button></td>
 </table>
 <BR>
-
-<table bgcolor="#FFFFFF" width="700">
+<table bgcolor="#FFFFFF">
+	<tr align=center bgcolor="#FAED7D">
+		<td width="100">이름</td><td width="200">주민등록번호</td><td widht="70"></td>
+	</tr>
 <%
 	Class.forName("com.mysql.jdbc.Driver");
 
@@ -34,13 +37,16 @@
 		conn = DriverManager.getConnection(db_url, db_user, db_password);
 		stmt=conn.createStatement();
 		
-		String query="SELECT name, id FROM patient;";
+		String query;
+		if(request.getMethod().equals("POST")){
+			String name=request.getParameter("search_name");
+			query="SELECT name, id FROM patient where name=\""+name+"\";";
+		}
+		else{
+			query="SELECT name, id FROM patient;";
+		}
 		rs=stmt.executeQuery(query);
-%>
-	<tr align=center>
-		<td>이름</td><td>주민등록번호</td><td></td><td></td><td></td>	
-	</tr>
-<%
+
 		while(rs.next()){
 			String p_name, p_id;
 			p_name=rs.getString("name");
