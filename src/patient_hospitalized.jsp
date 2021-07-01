@@ -154,14 +154,14 @@ table{
 	</tr>
 	<tr>
 		<td align=center>담당의사</td>
-		<td><input type="text" id="drnameInput" width="100">
+		<td><input type="text" id="drtextInput">
 			<input type="hidden" id="dridInput">
 			<input type="button" value="검색" onclick="openDr()">
 		</td>
 	</tr>
 	<tr>
 	<td colspan="3" align=center><input type="submit" value="등록">
-								 <input type="button" value="취소" onclick="location.href='patient_page.jsp'"></td>
+				     <input type="button" value="취소" onclick="location.href='patient_page.jsp'"></td>
 	</tr>
 </table>
 </form>
