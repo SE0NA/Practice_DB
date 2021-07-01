@@ -60,7 +60,7 @@
 			text=request.getParameter("search_text");
 			menu=request.getParameter("menu");
 			if(menu.equals("name")){	// 이름 검색
-				query="SELECT name, employee_id, department.name FROM doctor JOIN department ON doctor.belong_d = department.id where name=\""+text+"\";";
+				query="SELECT doctor.name, employee_id, department.name FROM doctor JOIN department ON doctor.belong_d = department.id where doctor.name=\""+text+"\";";
 			}
 			else if(menu.equals("department")){
 				query="SELECT doctor.name, employee_id, department.name FROM doctor JOIN department ON doctor.belong_d = department.id where department.name=\""+text+"\";";
