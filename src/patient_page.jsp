@@ -19,9 +19,10 @@
 	</tr>
 </table>
 <BR>
+<div style="overflow-y:auto;">
 <table bgcolor="#FFFFFF">
 	<tr align=center bgcolor="#FAED7D">
-		<td width="100">이름</td><td width="200">주민등록번호</td><td width="130"></td>
+		<td width="100">이름</td><td width="200">주민등록번호</td><td colspan="2" width="100"></td>
 	</tr>
 <%
 	Class.forName("com.mysql.jdbc.Driver");
@@ -59,7 +60,13 @@
 		<td align=center>
 			<form method=post action="this_patient.jsp" >
 				<input type=hidden name="id" value="<%=p_id%>">
-				<input type=submit value="확인">
+				<input type=submit value="정보">
+			</form>
+		</td>
+		<td>
+			<form method=pust action="patient_hospitalized.jsp">
+				<input type=hidden name="id" value="<%=p_id%>">
+				<input type=submit value="입원">
 			</form>
 		</td>
 	</tr>
@@ -67,6 +74,7 @@
 		}	// end of while
 %>
 </table>
+</div>
 <%
 		rs.close();
 		stmt.close();
