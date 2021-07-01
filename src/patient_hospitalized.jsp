@@ -34,6 +34,16 @@
 		System.out.println("err: "+e);
 	}
 %>
+
+<!-- 담당의사 불러오기 -->
+<script type="text/javascript">
+	var openWin;
+	function openDr(){
+		window.name="";
+		openWin=window.open("patient_hospitalized_dr.jsp", "담당의사 검색", "width=500, height=300, resizable=no, scrollbars=yes");
+	}
+</script>
+
 <body bgcolor=#EAEAEA>
 <center>
 <font color="#000000" face="나눔고딕">
@@ -144,11 +154,12 @@ table{
 	</tr>
 	<tr>
 		<td align=center>담당의사</td>
-		<td>null</td>
+		<td><input type="text" id="drInput" width="100"><input type="button" value="검색" onclick="openDr()">
+		</td>
 	</tr>
 	<tr>
 	<td colspan="3" align=center><input type="submit" value="등록">
-								 <input type="button" value="취소" onclick="location.href='patient_page.jsp'"></td>
+				     <input type="button" value="취소" onclick="location.href='patient_page.jsp'"></td>
 	</tr>
 </table>
 </form>
