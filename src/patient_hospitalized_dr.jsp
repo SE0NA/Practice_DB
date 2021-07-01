@@ -5,7 +5,9 @@
 <head><title>의사 검색</title></head>
 <script type="text/javascript">
 	function setDrText(){
-		opener.document.getElementById("drInput").value=document.getElementById("charged_dr").value
+		opener.document.getElementById("drtextInput").value=document.getElementById("dtext").value;
+		opener.document.getElementById("dridInput").value=document.getElementById("did").value;
+		self.close();
 	}
 </script>
 
@@ -83,9 +85,8 @@
 %>
 			<td><%= dbelong %></td><td><%= dname %></td><td><%= did %></td>
 			<td>
-				<input type="hidden" name="dname" value="<%= dname %>">
-				<input type="hidden" name="did" value="<%= did %>">
-				<input type="hidden" name="dbelong" value="<%= dbelong %>">
+				<input type="hidden" id="dtext" value="<%= dname %>(<%= dbelong%>)">
+				<input type="hidden" id="did" value="<%= did %>">
 				<input type="button" value="선택" onclick="setDrText()">
 			</td>
 <%
@@ -102,6 +103,7 @@
 		System.out.println("err: "+e);
 	}
 %>
+	<input type="button" value="취소" onclick="window.close()">
 </font>
 </center>
 </body>
