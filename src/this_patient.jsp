@@ -67,7 +67,7 @@
 		</td>
 	</tr>
 </table>
-
+	
 <!-- 입원정보 -->
 <div style="overflow-y:auto; over-flow-x:auto; margin:20px">
 	<table bgcolor="#FFFFFF" width="400">
@@ -82,15 +82,15 @@
 				String query;
 				if(request.getMethod().equals("POST")){
 					String name=request.getParameter("search_name");
-					query="SELECT entered, out, doctor.name, doctor.belong_d FROM hospitalized JOIN doctor ON hospitalized.charged_dr = doctor.employee_id where patient_id=\""+pid+"\";";
+					query="SELECT entered, discharged, doctor.name, department.name FROM hospitalized JOIN doctor ON hospitalized.charged_dr=doctor.employee_id JOIN department ON doctor.belong_d=department.id where hospitalized.patient_id=\""+pid+"\";";
 					rs=stmt.executeQuery(query);
 				}
 				while(rs.next()){
 					String hentered, hout, hdr, hdrblng;
 					hentered=rs.getString("entered");
-					hout=rs.getString("out");
+					hout=rs.getString("discharged");
 					hdr=rs.getString("doctor.name");
-					hdrblng=rs.getString("doctor.belong_d");
+					hdrblng=rs.getString("department.name");
 		%>
 		<tr>
 			<td><%= hentered %></td>
@@ -110,6 +110,12 @@
 		%>
 		</table>
 	</div>
+	<form method=post action="patient_hospitalized.jsp">
+		<input type=hidden name="name" value="<%=pname %>">
+		<input type=hidden name="id" value="<%=pid%>">
+		<input type=submit value="입원">
+		<input type="button" value="뒤로" onclick="history.back()">
+	</form>
 </div>
 
 </font>
