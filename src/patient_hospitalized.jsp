@@ -4,9 +4,10 @@
 <html>
 <head><title>환자 입원</title></head>
 <%
-	String id=request.getParameter("p_id");
-
-	String name, sex;
+	String name=request.getParameter("name");
+	String id=request.getParameter("id");
+	
+	String sex=null;
 	Class.forName("com.mysql.jdbc.Driver");
 
 	String db_url = "jdbc:mysql://localhost/hospital";
@@ -17,19 +18,15 @@
 	Statement stmt = null;
 	ResultSet rs = null;
 	
-	name=null;	sex=null;
-	
 	try{
 		conn = DriverManager.getConnection(db_url, db_user, db_password);
 		stmt = conn.createStatement();
 		
-		String query="SELECT name, sex FROM patient where id=\""+id+"\";";
+		String query="SELECT sex FROM patient where id=\""+id+"\";";
 		rs=stmt.executeQuery(query);
 		if(rs.next()){
-			name=rs.getString("name");
 			sex=rs.getString("sex");
 		}
-		
 	} catch(Exception e){
 		System.out.println("err: "+e);
 	}
@@ -68,6 +65,10 @@ table{
 	<tr>
 		<td align=center>주민등록번호</td>
 		<td><%= id %></td>
+	</tr>
+	<tr>
+		<td align=center>성별</td>
+		<td><%= sex %></td>
 	</tr>
 	<tr>
 		<td colspan="2" align=center bgcolor="#FAED7D">입원 등록</td>
@@ -115,7 +116,7 @@ table{
 	<tr>
 		<td align=center>퇴원일</td>
 		<td>
-			<select name="o_year">
+			<select name="d_year">
 				<option value="2021">2021년</option>
 				<option value="2022">2022년</option>
 				<option value="2023">2023년</option>
@@ -123,7 +124,7 @@ table{
 				<option value="2025">2025년</option>
 			</select>
 			/
-			<select name="o_month">
+			<select name="d_month">
 				<option value="01">1월</option><option value="02">2월</option>
 				<option value="03">3월</option><option value="04">4월</option>
 				<option value="05">5월</option><option value="06">6월</option>
@@ -132,7 +133,7 @@ table{
 				<option value="11">11월</option><option value="12">12월</option>
 			</select>
 			/
-			<select name="o_day">
+			<select name="d_day">
 				<option value="01">1일</option><option value="02">2일</option>
 				<option value="03">3일</option><option value="04">4일</option>
 				<option value="05">5일</option><option value="06">6일</option>
@@ -155,13 +156,13 @@ table{
 	<tr>
 		<td align=center>담당의사</td>
 		<td><input type="text" id="drtextInput">
-			<input type="hidden" id="dridInput">
+			<input type="hidden" id="dridInput" name="charged_dr">
 			<input type="button" value="검색" onclick="openDr()">
 		</td>
 	</tr>
 	<tr>
 	<td colspan="3" align=center><input type="submit" value="등록">
-				     <input type="button" value="취소" onclick="location.href='patient_page.jsp'"></td>
+				     <input type="button" value="취소" onclick="history.back()"></td>
 	</tr>
 </table>
 </form>
