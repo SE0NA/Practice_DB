@@ -7,7 +7,9 @@ manage_form.jsp | 병원 관리 시스템의 첫화면. 환자/병원을 선택�
 
 ![image](https://user-images.githubusercontent.com/85846475/123762673-fe515280-d8fd-11eb-9522-3754e60e48bf.png)
 
-</BR></BR>
+</BR>
+
+***
 
 #### 💡 환자 관리 💡
 소스 | 내용
@@ -18,11 +20,27 @@ patient_add2.jsp | patient_add.jsp에서 입력한 데이터 확인 </BR> null�
 this_patient.jsp | patient_page.jsp에서 환자리스트의 정보 클릭시 실행. 해당 환자 정보 출력, 입원 내역 추가.
 patient_hospitalized.jsp | patient_page.jsp에서 환자리스트의 입원 클릭시 실행.
 patient_hospitalized_dr.jsp | patient_hospitalized.jsp에서 입원 환자를 담당할 의사를 리스트에서 선택하여 값을 전송
+patient_hospitalized2.jsp | patient_hospitalized.jsp의 입원 정보를 확인하고 mysql에 저장
 
 ###### 기능 체크
-🟢완료  🟡구현중  🔴오류
+🟢완료  🟡구현중  🔴오류 ⚫필요
 > 🟢 환자 추가([신규] → 환자정보입력 → mysql 저장 완료)</br>
 > 🟢 환자 리스트 출력(patient_page.jsp, mysql에서 환자 정보 읽기 가능)</br>
 > 🟢 환자 검색(patient_page.jsp, 환자 이름을 이용해 mysql에서 해당 이름의 환자 가져오기 가능)</br>
 > 🟢 환자 정보([정보] → this_patient.jsp → 선택한 환자의 기본 정보+입원 정보 출력 가능)</br>
-> 🟡 환자 입원([입원]→입력한 입원 정보 mysql에 추가)</
+> 🟢 환자 입원([입원]→입력한 입원 정보(의사 정보 팝업 불러오기 가능) mysql에 추가 가능)</br>
+> ⚫ 입원 환자 - 간호사 내용
+
+***
+
+#### 💡 병원 관리 💡
+소스 | 내용
+---- | ----
+
+###### 기능 체크
+🟢완료  🟡구현중  🔴오류 ⚫필요
+> ⚫ 로그인(병원 관리 시스템 접속)</br>
+> ⚫ 부서 관리(추가, 수정)</br>
+> ⚫ 직원(의사, 간호사) 관리(추가, 수정)</br>
+> ⚫ 치료 관리 (추가, 수정)
+
