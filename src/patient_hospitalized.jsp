@@ -36,7 +36,6 @@
 <script type="text/javascript">
 	var openWin;
 	function openDr(){
-		window.name="";
 		openWin=window.open("patient_hospitalized_dr.jsp", "담당의사 검색", "width=400, height=300, resizable=no, scrollbars=yes");
 	}
 </script>
@@ -162,7 +161,7 @@ table{
 	</tr>
 	<tr>
 	<td colspan="3" align=center><input type="submit" value="등록">
-				     <input type="button" value="취소" onclick="history.back()"></td>
+								 <input type="button" value="취소" onclick="history.back()"></td>
 	</tr>
 </table>
 </form>
