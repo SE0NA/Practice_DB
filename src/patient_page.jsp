@@ -63,12 +63,6 @@
 				<input type=submit value="정보">
 			</form>
 		</td>
-		<td>
-			<form method=pust action="patient_hospitalized.jsp">
-				<input type=hidden name="id" value="<%=p_id%>">
-				<input type=submit value="입원">
-			</form>
-		</td>
 	</tr>
 <%
 		}	// end of while
