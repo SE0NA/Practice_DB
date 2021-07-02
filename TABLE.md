@@ -28,9 +28,9 @@
 
 #### 🔒 hospitalized : 입원 정보
 
-![image](https://user-images.githubusercontent.com/85846475/124138030-38b71d00-dac1-11eb-98a3-b664dca96496.png)
+![image](https://user-images.githubusercontent.com/85846475/124281834-1be41d80-db85-11eb-9f98-a1ace295120a.png)
 
-###### → patient_id(입원환자주민등록번호), entered(입원날짜), discharged(퇴원날짜), charged_dr(담당의사)
+###### → hospitalized_id(입원코드), patient_id(입원환자주민등록번호), entered(입원날짜), discharged(퇴원날짜), charged_dr(담당의사)
 
 
 #### 🔒 nurse : 간호사 정보
