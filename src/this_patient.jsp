@@ -72,7 +72,7 @@
 <div style="overflow-y:auto; over-flow-x:auto; margin:20px">
 	<table bgcolor="#FFFFFF" width="400">
 		<tr bgcolor="#FAED7D" align=center>
-			<td>입원일</td><td>퇴원일</td><td>담당의</td><td>담당부서</td>
+			<td>코드</td><td>입원일</td><td>퇴원일</td><td>담당의</td><td>부서</td><td></td>
 		</tr>
 		<%
 			try{
@@ -82,21 +82,29 @@
 				String query;
 				if(request.getMethod().equals("POST")){
 					String name=request.getParameter("search_name");
-					query="SELECT entered, discharged, doctor.name, department.name FROM hospitalized JOIN doctor ON hospitalized.charged_dr=doctor.employee_id JOIN department ON doctor.belong_d=department.id where hospitalized.patient_id=\""+pid+"\";";
+					query="SELECT hospitalized_id, entered, discharged, doctor.name, department.name FROM hospitalized JOIN doctor ON hospitalized.charged_dr=doctor.employee_id JOIN department ON doctor.belong_d=department.id where hospitalized.patient_id=\""+pid+"\";";
 					rs=stmt.executeQuery(query);
 				}
 				while(rs.next()){
-					String hentered, hout, hdr, hdrblng;
+					String hcode, hentered, hout, hdr, hdrblng;
+					hcode=rs.getString("hospitalized_id");
 					hentered=rs.getString("entered");
 					hout=rs.getString("discharged");
 					hdr=rs.getString("doctor.name");
 					hdrblng=rs.getString("department.name");
 		%>
 		<tr>
-			<td><%= hentered %></td>
-			<td><%= hout %></td>
-			<td><%= hdr %></td>
-			<td><%= hdrblng %></td>
+			<td align=right><%= hcode %></td>
+			<td align=center><%= hentered %></td>
+			<td align=center><%= hout %></td>
+			<td align=center><%= hdr %></td>
+			<td align=center><%= hdrblng %></td>
+			<td align=center>
+				<form method="post" action="this_patient_nurse.jsp">
+					<input type="hidden" name="code" value="<%= hcode %>">
+					<input type="submit" value="보기">
+				</form>
+			</td>
 		</tr>
 		<%
 				}	// end of while
