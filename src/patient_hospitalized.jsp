@@ -64,7 +64,7 @@ table{
 	</tr>
 	<tr>
 		<td align=center>주민등록번호</td>
-		<td><%= id %></td>
+		<td><%= id %><input type="hidden" name="id" value="<%= id %>"></td>
 	</tr>
 	<tr>
 		<td align=center>성별</td>
