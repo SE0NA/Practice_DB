@@ -45,3 +45,16 @@ patient_hospitalized2.jsp | patient_hospitalized.jsp의 입원 정보를 확인�
 > ⚫ 직원(의사, 간호사) 관리(추가, 수정)</br>
 > ⚫ 치료 관리 (추가, 수정)
 
+#### 💡 부서 관리 💡
+소스 | 내용
+---- | ----
+department_page.jsp | 부서 정보를 확인, 추가, 수정
+department_add.jsp | 신규 부서 추가
+department_add2.jsp | department_add.jsp에서 입력한 정보로 mysql에 새로운 행 추가
+department_update.jsp | 선택한 부서의 정보 수정
+
+###### 기능 체크
+🟢완료  🟡구현중  🔴오류 ⚫필요
+> 🟢 부서 리스트 구현
+> 🟢 부서 추가(department_add.jsp)
+> 
