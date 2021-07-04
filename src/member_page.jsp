@@ -42,7 +42,7 @@
 		String query;
 		if(request.getMethod().equals("POST")){
 			String name=request.getParameter("search_name");
-			query="SELECT member.name, employee_id, department.name, job FROM member JOIN department ON member.belong=department.id where name=\""+name+"\" ORDER BY employee_id;";
+			query="SELECT member.name, employee_id, department.name, job FROM member JOIN department ON member.belong=department.id where member.name=\""+name+"\" ORDER BY employee_id;";
 		}
 		else{
 			query="SELECT member.name, employee_id, department.name, job FROM member JOIN department ON member.belong=department.id;";
