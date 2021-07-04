@@ -22,7 +22,7 @@
 <div style="overflow-y:auto;">
 <table bgcolor="#FFFFFF">
 	<tr align=center bgcolor="#B2EBF4">
-		<td>부서</td><td>사원번호</td><td>구분</td><td>이름</td><td>입사일</td><td></td>
+		<td>부서</td><td>사원번호</td><td>구분</td><td>이름</td><td></td>
 	</tr>
 <%
 	Class.forName("com.mysql.jdbc.Driver");
@@ -42,19 +42,18 @@
 		String query;
 		if(request.getMethod().equals("POST")){
 			String name=request.getParameter("search_name");
-			query="SELECT name, employee_id, employed, belong, job FROM member where name=\""+name+"\" ORDER BY employee_id;";
+			query="SELECT member.name, employee_id, department.name, job FROM member JOIN department ON member.belong=department.id where name=\""+name+"\" ORDER BY employee_id;";
 		}
 		else{
-			query="SELECT name, employee_id, employed, belong, job FROM member LIMIT 20;";
+			query="SELECT member.name, employee_id, department.name, job FROM member JOIN department ON member.belong=department.id;";
 		}
 		rs=stmt.executeQuery(query);
 
 		while(rs.next()){
 			String name, eid, employed, belong, job;
-			name=rs.getString("name");
+			name=rs.getString("member.name");
 			eid=rs.getString("employee_id");
-			employed=rs.getString("employed");
-			belong=rs.getString("belong");
+			belong=rs.getString("department.name");
 			job=rs.getString("job");
 %>
 	<tr>
