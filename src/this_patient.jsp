@@ -35,6 +35,11 @@
 	}
 %>
 
+<script type="text/javascript">
+
+</script>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head><title>환자 정보</title></head>
@@ -82,7 +87,7 @@
 				String query;
 				if(request.getMethod().equals("POST")){
 					String name=request.getParameter("search_name");
-					query="SELECT hospitalized_id, entered, discharged, doctor.name, department.name FROM hospitalized JOIN doctor ON hospitalized.charged_dr=doctor.employee_id JOIN department ON doctor.belong_d=department.id where hospitalized.patient_id=\""+pid+"\";";
+					query="SELECT hospitalized_id, entered, discharged, member.name, department.name FROM hospitalized JOIN member ON hospitalized.charged_dr=member.employee_id JOIN department ON member.belong=department.id where hospitalized.patient_id=\""+pid+"\";";
 					rs=stmt.executeQuery(query);
 				}
 				while(rs.next()){
@@ -90,7 +95,7 @@
 					hcode=rs.getString("hospitalized_id");
 					hentered=rs.getString("entered");
 					hout=rs.getString("discharged");
-					hdr=rs.getString("doctor.name");
+					hdr=rs.getString("member.name");
 					hdrblng=rs.getString("department.name");
 		%>
 		<tr>
@@ -100,7 +105,7 @@
 			<td align=center><%= hdr %></td>
 			<td align=center><%= hdrblng %></td>
 			<td align=center>
-				<form method="post" action="this_patient_nurse.jsp">
+				<form method="post" action="location.href=windows.open('this_patient_nurse.jsp')">
 					<input type="hidden" name="code" value="<%= hcode %>">
 					<input type="submit" value="보기">
 				</form>
