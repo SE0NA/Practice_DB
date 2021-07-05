@@ -41,7 +41,6 @@
 		</tr>
 <%
 	Class.forName("com.mysql.jdbc.Driver");
-
 	String db_url = "jdbc:mysql://localhost/hospital";
 	String db_user = "patient_manage";
 	String db_password = "1234";
@@ -62,20 +61,19 @@
 			text=request.getParameter("search_text");
 			menu=request.getParameter("menu");
 			if(menu.equals("name")){	// 이름 검색
-				query="SELECT doctor.name, employee_id, department.name FROM doctor JOIN department ON doctor.belong_d = department.id where doctor.name=\""+text+"\";";
+				query="SELECT member.name, employee_id, department.name FROM member JOIN department ON member.belong = department.id where member.name=\""+text+"\";";
 			}
 			else if(menu.equals("department")){
-				query="SELECT doctor.name, employee_id, department.name FROM doctor JOIN department ON doctor.belong_d = department.id where department.name=\""+text+"\";";
+				query="SELECT member.name, employee_id, department.name FROM member JOIN department ON member.belong = department.id where department.name=\""+text+"\";";
 			}
 			else if(menu.equals("employeeid")){
-				query="SELECT doctor.name, employee_id, department.name FROM doctor JOIN department ON doctor.belong_d = department.id where doctor.employee_id=\""+text+"\";";
+				query="SELECT member.name, employee_id, department.name FROM member JOIN department ON member.belong = department.id where member.employee_id=\""+text+"\";";
 			}
 		}
 		else{
-			query="SELECT doctor.name, employee_id, department.name FROM doctor JOIN department ON doctor.belong_d = department.id;";
+			query="SELECT member.name, employee_id, department.name FROM member JOIN department ON member.belong = department.id;";
 		}
 			rs=stmt.executeQuery(query);
-
 			while(rs.next()){
 				String dname, did, dbelong;
 				dname=rs.getString("name");
@@ -83,12 +81,14 @@
 				dbelong=rs.getString("department.name");
 		
 %>
+		<tr>
 			<td><%= dbelong %></td><td><%= dname %></td><td><%= did %></td>
 			<td>
 				<input type="hidden" id="dtext" value="<%= dname %>(<%= dbelong%>)">
 				<input type="hidden" id="did" value="<%= did %>">
 				<input type="button" value="선택" onclick="setDrText()">
 			</td>
+		</tr>
 <%
 			}	// end of while
 		rs.close();
