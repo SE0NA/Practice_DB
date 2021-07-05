@@ -28,7 +28,7 @@ patient_hospitalized2.jsp | patient_hospitalized.jsp의 입원 정보를 확인�
 > 🟢 환자 리스트 출력(patient_page.jsp, mysql에서 환자 정보 읽기 가능)</br>
 > 🟢 환자 검색(patient_page.jsp, 환자 이름을 이용해 mysql에서 해당 이름의 환자 가져오기 가능)</br>
 > 🟢 환자 정보([정보] → this_patient.jsp → 선택한 환자의 기본 정보+입원 정보 출력 가능)</br>
-> 🟢 환자 입원([입원]→입력한 입원 정보(의사 정보 팝업 불러오기 가능) mysql에 추가 가능)</br>
+> 🟡 환자 입원([입원]→입력한 입원 정보(의사 정보 팝업 불러오기X) mysql에 추가 가능)</br>
 > 🔴 입원 환자 - 간호사 내용</br>
 > 🔴 환자 입원시 부서의 사용 병상수 +1</br>
 
