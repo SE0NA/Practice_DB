@@ -12,14 +12,7 @@ table{
 	border: 1px solid black;
 }
 </style>
-<script type="text/javascript">
-	var openWin;
-	function openPop(){
-		openWin=window.open("member_add_find_belong.jsp", "부서 검색", "width=400, height=300, resizable=no, scrollbars=yes");
-	}
-</script>
 
-<form method=post action="member_add2.jsp">
 <table bgcolor="#FFFFFF" cellpadding="5">
 	<tr>
 		<td align=center>이름</td>
@@ -33,9 +26,14 @@ table{
 	</tr>
 	<tr>
 		<td align=center>부서</td>
-		<td><input type="text" id="textInput" disabled>
-			<input type="hidden" id="departmentid" name="departmentid">
-			<input type="button" value="검색" onclick="openPop()">
+		<td>
+			<input type="text" id="text" value="" disabled/>
+			<input type="hidden" id="departmentid" name="departmentid" value="">
+			<button type="button" onclick="javascript:find_belong();">검색</button>
+			<script type="text/javascript">
+				// member_add_find_belong.jsp에서 전송받을 부분
+			</script>
+			
 		</td>
 	</tr>
 	<tr>
@@ -86,7 +84,7 @@ table{
 
 	<tr>
 	<td colspan="2" align=center><input type="submit" value="등록">
-						          		     <input type="button" value="취소" onclick="location.href='member_page.jsp'"></td>
+				     <input type="button" value="취소" onclick="location.href='member_page.jsp'"></td>
 	</tr>
 </table>
 </form>
