@@ -38,6 +38,13 @@
 </table>
 <BR>
 <H4>담당 간호사</H4>
+<form method="post" action="patient_nurse_add.jsp">
+	<input type="hidden" name="hcode" value="<%= hcode %>">
+	<input type="text" name="add_nurse_id">
+	<input type="submit" value="추가">
+	<input type="button" value="뒤로" onclick="history.back();">
+</form>
+<BR>
 <table bgclolor="#FFFFFF">
 	<tr bgcolor="#FAED7D">
 		<td align=center>사원번호</td><td align=center>이름</td>
@@ -69,12 +76,6 @@
 %>
 
 <BR>
-
-<form method="post" action="patient_nurse_add.jsp">
-	<input type="hidden" name="hcode" value="<%= hcode %>">
-	<input type="submit" value="추가">
-	<input type="button" value="뒤로" onlcick="history.back()">
-</form>
 </center>
 </body>
 </font>
