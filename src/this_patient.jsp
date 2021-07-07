@@ -105,7 +105,12 @@
 			<td align=center><%= hdr %></td>
 			<td align=center><%= hdrblng %></td>
 			<td align=center>
-				<form method="post" action="location.href=windows.open('this_patient_nurse.jsp')">
+				<form method="post" action="this_patient_nurse.jsp">
+					<input type="hidden" name="hname" value="<%= pname %>">
+					<input type="hidden" name="dr" value="<%= hdr %>">
+					<input type="hidden" name="drblng" value="<%= hdrblng %>">
+					<input type="hidden" name="hentered" value="<%= hentered %>">
+					<input type="hidden" name="hout" value="<%= hout %>">
 					<input type="hidden" name="code" value="<%= hcode %>">
 					<input type="submit" value="보기">
 				</form>
