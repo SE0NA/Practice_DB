@@ -38,7 +38,7 @@
 </table>
 <BR>
 <H4>담당 간호사</H4>
-<table>
+<table bgclolor="#FFFFFF">
 	<tr bgcolor="#FAED7D">
 		<td align=center>사원번호</td><td align=center>이름</td>
 	</tr>
@@ -48,12 +48,11 @@
 		conn = DriverManager.getConnection(db_url, db_user, db_password);
 		stmt = conn.createStatement();
 		
-		String query="SELECT charged_n, member.name FROM patient_nurse JOIN member ON patient_nurse.charged_n=member.employee_id where hospitalized_code=\""+hcode+"\";";
+		String query="SELECT charged_n, member.name FROM patient_nurse JOIN member ON patient_nurse.charged_n=member.employee_id where hospitalized_code="+hcode+";";
 		rs=stmt.executeQuery(query);
 		while(rs.next()){
 			nname=rs.getString("member.name");
 			neid=rs.getString("charged_n");
-		
 %>
 	<tr>
 		<td><%= nname %></td><td><%=neid %></td>
@@ -61,7 +60,9 @@
 </table>
 <%
 		}
-		
+		rs.close();
+		stmt.close();
+		conn.close();
 	} catch(Exception e){
 		System.out.println("err: "+e);
 	}
@@ -69,10 +70,10 @@
 
 <BR>
 
-<form method="post" action="patient_nurse_update.jsp">
+<form method="post" action="patient_nurse_add.jsp">
 	<input type="hidden" name="hcode" value="<%= hcode %>">
-	<input type="submit" value="수정">
-	<input type="button" value="닫기" onlcick="window.close()">
+	<input type="submit" value="추가">
+	<input type="button" value="뒤로" onlcick="history.back()">
 </form>
 </center>
 </body>
