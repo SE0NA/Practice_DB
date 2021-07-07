@@ -12,7 +12,7 @@ table{
 	border: 1px solid black;
 }
 </style>
-
+<form method="post" action="member_add2.jsp">
 <table bgcolor="#FFFFFF" cellpadding="5">
 	<tr>
 		<td align=center>이름</td>
@@ -26,15 +26,7 @@ table{
 	</tr>
 	<tr>
 		<td align=center>부서</td>
-		<td>
-			<input type="text" id="text" value="" disabled/>
-			<input type="hidden" id="departmentid" name="departmentid" value="">
-			<button type="button" onclick="javascript:find_belong();">검색</button>
-			<script type="text/javascript">
-				// member_add_find_belong.jsp에서 전송받을 부분
-			</script>
-			
-		</td>
+		<td>부서코드: <input type="text" name="departmentid"/></td>
 	</tr>
 	<tr>
 		<td align=center>구분</td>
@@ -84,7 +76,7 @@ table{
 
 	<tr>
 	<td colspan="2" align=center><input type="submit" value="등록">
-				     <input type="button" value="취소" onclick="location.href='member_page.jsp'"></td>
+			             <input type="button" value="취소" onclick="location.href='member_page.jsp'"></td>
 	</tr>
 </table>
 </form>
