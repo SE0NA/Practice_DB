@@ -3,7 +3,6 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 
-	// patient_add.jsp의 입력값 저장
 	int neid=-1;
 	int hcode=-1;
 	
@@ -37,7 +36,6 @@
 			pstmt.close();
 			conn.close();
 %>
-			<!-- 신규 부서 등록 완료 안내 -->
 			<script>
 			alert('등록 완료!');
 			window.location=document.referrer;
@@ -46,7 +44,6 @@
 		} catch(Exception e){
 			System.out.println("err: "+e);
 			%>
-			<!-- 신규 부서 등록 완료 안내 -->
 			<script>
 			alert('등록에 오류가 있습니다. 중복을 확인하세요.');
 			window.history.back();
